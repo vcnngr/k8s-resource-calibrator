@@ -1,0 +1,773 @@
+jq '.scans[
+    : 10
+],.score,.resources,.description,.strategy,.errors,.clusterSummary,.config' scan.json
+[
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "cert-manager",
+            "container": "cert-manager-controller",
+            "pods": [
+                {
+                    "name": "cert-manager-74d95f9c8-szlzp",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "cert-manager",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "limits": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app": "cert-manager",
+                "app.kubernetes.io/component": "controller",
+                "app.kubernetes.io/instance": "cert-manager",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "cert-manager",
+                "app.kubernetes.io/version": "v1.17.1",
+                "helm.sh/chart": "cert-manager-v1.17.1"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "2",
+                "meta.helm.sh/release-name": "cert-manager",
+                "meta.helm.sh/release-namespace": "cert-manager"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "GOOD"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "cert-manager-cainjector",
+            "container": "cert-manager-cainjector",
+            "pods": [
+                {
+                    "name": "cert-manager-cainjector-7f69cd69f7-h4bbj",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "cert-manager",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "limits": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app": "cainjector",
+                "app.kubernetes.io/component": "cainjector",
+                "app.kubernetes.io/instance": "cert-manager",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "cainjector",
+                "app.kubernetes.io/version": "v1.17.1",
+                "helm.sh/chart": "cert-manager-v1.17.1"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "2",
+                "meta.helm.sh/release-name": "cert-manager",
+                "meta.helm.sh/release-namespace": "cert-manager"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "GOOD"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "cert-manager-webhook",
+            "container": "cert-manager-webhook",
+            "pods": [
+                {
+                    "name": "cert-manager-webhook-6cc5dccc4b-8qf8j",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "cert-manager",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "limits": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app": "webhook",
+                "app.kubernetes.io/component": "webhook",
+                "app.kubernetes.io/instance": "cert-manager",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "webhook",
+                "app.kubernetes.io/version": "v1.17.1",
+                "helm.sh/chart": "cert-manager-v1.17.1"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "2",
+                "meta.helm.sh/release-name": "cert-manager",
+                "meta.helm.sh/release-namespace": "cert-manager"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "GOOD"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "cnpg-cloudnative-pg",
+            "container": "manager",
+            "pods": [
+                {
+                    "name": "cnpg-cloudnative-pg-7f4c97d784-pmcws",
+                    "deleted": true
+                },
+                {
+                    "name": "cnpg-cloudnative-pg-7f4c97d784-hghhc",
+                    "deleted": true
+                },
+                {
+                    "name": "cnpg-cloudnative-pg-7f4c97d784-kxm6n",
+                    "deleted": false
+                },
+                {
+                    "name": "cnpg-cloudnative-pg-7f4c97d784-ww9qs",
+                    "deleted": true
+                }
+            ],
+            "hpa": null,
+            "namespace": "cnpg-system",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": 0.1,
+                    "memory": 104857600.0
+                },
+                "limits": {
+                    "cpu": 0.2,
+                    "memory": 209715200.0
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app.kubernetes.io/instance": "cnpg",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "cloudnative-pg",
+                "app.kubernetes.io/version": "1.26.1",
+                "helm.sh/chart": "cloudnative-pg-0.25.0"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "1",
+                "meta.helm.sh/release-name": "cnpg",
+                "meta.helm.sh/release-namespace": "cnpg-system"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "GOOD"
+                },
+                "memory": {
+                    "value": 174063616.0,
+                    "severity": "GOOD"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 174063616.0,
+                    "severity": "GOOD"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "assfamsempre-wordpress",
+            "container": "wordpress",
+            "pods": [
+                {
+                    "name": "assfamsempre-wordpress-778dc4bd54-t5qwm",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "default",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": 0.425,
+                    "memory": 524288000.0
+                },
+                "limits": {
+                    "cpu": 0.5,
+                    "memory": 792723456.0
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app.kubernetes.io/instance": "assfamsempre",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "wordpress",
+                "app.kubernetes.io/version": "6.8.1",
+                "helm.sh/chart": "wordpress-24.2.6"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "1",
+                "meta.helm.sh/release-name": "assfamsempre",
+                "meta.helm.sh/release-namespace": "default"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.018,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 905969664.0,
+                    "severity": "WARNING"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 905969664.0,
+                    "severity": "OK"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "autodiscover-ingrosso-net",
+            "container": "autodiscover",
+            "pods": [
+                {
+                    "name": "autodiscover-ingrosso-net-6499855f5d-24x94",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "default",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "limits": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "io.kompose.service": "autodiscover-ingrosso-net"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "1",
+                "kompose.cmd": "kompose convert",
+                "kompose.version": "1.34.0 (HEAD)",
+                "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{\"kompose.cmd\":\"kompose convert\",\"kompose.version\":\"1.34.0 (HEAD)\"},\"labels\":{\"io.kompose.service\":\"autodiscover-ingrosso-net\"},\"name\":\"autodiscover-ingrosso-net\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"io.kompose.service\":\"autodiscover-ingrosso-net\"}},\"template\":{\"metadata\":{\"annotations\":{\"kompose.cmd\":\"kompose convert\",\"kompose.version\":\"1.34.0 (HEAD)\"},\"labels\":{\"io.kompose.service\":\"autodiscover-ingrosso-net\"}},\"spec\":{\"containers\":[{\"env\":[{\"name\":\"COMPANY_NAME\",\"value\":\"VCNNGR Services Provider\"},{\"name\":\"DOMAIN\",\"value\":\"ingrosso.net\"},{\"name\":\"IMAP_HOST\",\"value\":\"mail.ingrosso.net\"},{\"name\":\"IMAP_PORT\",\"value\":\"993\"},{\"name\":\"IMAP_SOCKET\",\"value\":\"SSL\"},{\"name\":\"MAIL_UUID\",\"value\":\"ED746D94-F4CD-4F2C-8E69-CD01A27C8FC3\"},{\"name\":\"POP_HOST\",\"value\":\"mail.ingrosso.net\"},{\"name\":\"POP_PORT\",\"value\":\"995\"},{\"name\":\"POP_SOCKET\",\"value\":\"SSL\"},{\"name\":\"PROFILE_IDENTIFIER\",\"value\":\"net.ingrosso.autodiscover\"},{\"name\":\"PROFILE_UUID\",\"value\":\"5EDCD286-5E1D-4253-ACEE-B595DEC38C4A\"},{\"name\":\"SMTP_HOST\",\"value\":\"mail.ingrosso.net\"},{\"name\":\"SMTP_PORT\",\"value\":\"587\"},{\"name\":\"SMTP_SOCKET\",\"value\":\"STARTTLS\"},{\"name\":\"SUPPORT_URL\",\"value\":\"https://autodiscover.ingrosso.net\"}],\"image\":\"monogramm/autodiscover-email-settings:latest\",\"name\":\"autodiscover\",\"ports\":[{\"containerPort\":8000,\"protocol\":\"TCP\"}]}],\"restartPolicy\":\"Always\"}}}}\n"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "GOOD"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "backup-deployment",
+            "container": "backup-pv-container",
+            "pods": [
+                {
+                    "name": "backup-deployment-86c65c54df-6p4q2",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "default",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "limits": {
+                    "cpu": null,
+                    "memory": null
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app": "backup-volume"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "2",
+                "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"backup-volume\"},\"name\":\"backup-deployment\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"backup-volume\",\"version\":\"v01\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"backup-volume\",\"version\":\"v01\"}},\"spec\":{\"containers\":[{\"image\":\"vcnngr/rsync-ssh-server\",\"name\":\"backup-pv-container\",\"ports\":[{\"containerPort\":873,\"name\":\"rsync\",\"protocol\":\"TCP\"},{\"containerPort\":22,\"name\":\"ssh\",\"protocol\":\"TCP\"}],\"volumeMounts\":[{\"mountPath\":\"/sflack\",\"name\":\"backup-volume-sflack\"},{\"mountPath\":\"/blandamura\",\"name\":\"backup-volume-blandamura\"},{\"mountPath\":\"/improntedigitali\",\"name\":\"backup-volume-improntedigitali\"},{\"mountPath\":\"/wwg\",\"name\":\"backup-volume-wwg\"},{\"mountPath\":\"/nutriway\",\"name\":\"backup-volume-nutriway\"},{\"mountPath\":\"/sysadmin\",\"name\":\"backup-volume-sysadmin\"},{\"mountPath\":\"/freenode\",\"name\":\"backup-volume-freenode\"},{\"mountPath\":\"/ingrosso\",\"name\":\"backup-volume-ingrosso\"},{\"mountPath\":\"/gvluxstay\",\"name\":\"backup-volume-gvluxstay\"},{\"mountPath\":\"/root/.ssh/authorized_keys\",\"name\":\"ssh-keys-v\",\"readOnly\":true,\"subPath\":\"authorized_keys\"}]}],\"volumes\":[{\"name\":\"backup-volume-sflack\",\"persistentVolumeClaim\":{\"claimName\":\"sflack-wordpress\"}},{\"name\":\"backup-volume-blandamura\",\"persistentVolumeClaim\":{\"claimName\":\"blandamura-wordpress\"}},{\"name\":\"backup-volume-improntedigitali\",\"persistentVolumeClaim\":{\"claimName\":\"improntedigitali-wordpress\"}},{\"name\":\"backup-volume-wwg\",\"persistentVolumeClaim\":{\"claimName\":\"worldwildgirl-wordpress\"}},{\"name\":\"backup-volume-nutriway\",\"persistentVolumeClaim\":{\"claimName\":\"nutriway-wordpress\"}},{\"name\":\"backup-volume-sysadmin\",\"persistentVolumeClaim\":{\"claimName\":\"sysadmin-wordpress\"}},{\"name\":\"backup-volume-freenode\",\"persistentVolumeClaim\":{\"claimName\":\"freenode-wordpress\"}},{\"name\":\"backup-volume-ingrosso\",\"persistentVolumeClaim\":{\"claimName\":\"ingrosso-wordpress\"}},{\"name\":\"backup-volume-gvluxstay\",\"persistentVolumeClaim\":{\"claimName\":\"gvluxstay-wordpress\"}},{\"name\":\"ssh-keys-v\",\"secret\":{\"defaultMode\":384,\"secretName\":\"backup-ssh-keys\"}}]}}}}\n"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "GOOD"
+                },
+                "memory": {
+                    "value": 104857600.0,
+                    "severity": "WARNING"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "blandamura-wordpress",
+            "container": "wordpress",
+            "pods": [
+                {
+                    "name": "blandamura-wordpress-7958cd499c-55lgw",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "default",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": 0.25,
+                    "memory": 268435456.0
+                },
+                "limits": {
+                    "cpu": 0.375,
+                    "memory": 402653184.0
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app.kubernetes.io/instance": "blandamura",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "wordpress",
+                "app.kubernetes.io/version": "6.8.2",
+                "helm.sh/chart": "wordpress-25.0.5"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "8",
+                "meta.helm.sh/release-name": "blandamura",
+                "meta.helm.sh/release-namespace": "default"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "OK"
+                },
+                "memory": {
+                    "value": 221249536.0,
+                    "severity": "GOOD"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 221249536.0,
+                    "severity": "OK"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "famigliamilele-wordpress",
+            "container": "wordpress",
+            "pods": [
+                {
+                    "name": "famigliamilele-wordpress-64b4ccb8f4-jkc6x",
+                    "deleted": false
+                }
+            ],
+            "hpa": null,
+            "namespace": "default",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": 0.425,
+                    "memory": 524288000.0
+                },
+                "limits": {
+                    "cpu": 0.5,
+                    "memory": 792723456.0
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app.kubernetes.io/instance": "famigliamilele",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "wordpress",
+                "app.kubernetes.io/version": "6.8.1",
+                "helm.sh/chart": "wordpress-24.2.5"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "4",
+                "meta.helm.sh/release-name": "famigliamilele",
+                "meta.helm.sh/release-namespace": "default"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": 0.01,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 386924544.0,
+                    "severity": "OK"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": null,
+                    "severity": "WARNING"
+                },
+                "memory": {
+                    "value": 386924544.0,
+                    "severity": "WARNING"
+                }
+            },
+            "info": {
+                "cpu": null,
+                "memory": null
+            }
+        },
+        "severity": "WARNING"
+    },
+    {
+        "object": {
+            "cluster": "prod",
+            "name": "freenode-wordpress",
+            "container": "wordpress",
+            "pods": [
+                {
+                    "name": "freenode-wordpress-5f59ddb757-jf47d",
+                    "deleted": false
+                }
+            ],
+            "hpa": {
+                "min_replicas": 1,
+                "max_replicas": 3,
+                "current_replicas": 1,
+                "desired_replicas": 1,
+                "target_cpu_utilization_percentage": 75.0,
+                "target_memory_utilization_percentage": null
+            },
+            "namespace": "default",
+            "kind": "Deployment",
+            "allocations": {
+                "requests": {
+                    "cpu": 0.25,
+                    "memory": 268435456.0
+                },
+                "limits": {
+                    "cpu": 0.375,
+                    "memory": 402653184.0
+                },
+                "info": {}
+            },
+            "warnings": [],
+            "labels": {
+                "app.kubernetes.io/instance": "freenode",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "wordpress",
+                "app.kubernetes.io/version": "6.8.2",
+                "helm.sh/chart": "wordpress-25.0.5"
+            },
+            "annotations": {
+                "deployment.kubernetes.io/revision": "8",
+                "meta.helm.sh/release-name": "freenode",
+                "meta.helm.sh/release-namespace": "default"
+            }
+        },
+        "recommended": {
+            "requests": {
+                "cpu": {
+                    "value": "?",
+                    "severity": "UNKNOWN"
+                },
+                "memory": {
+                    "value": 220200960.0,
+                    "severity": "GOOD"
+                }
+            },
+            "limits": {
+                "cpu": {
+                    "value": "?",
+                    "severity": "UNKNOWN"
+                },
+                "memory": {
+                    "value": 220200960.0,
+                    "severity": "OK"
+                }
+            },
+            "info": {
+                "cpu": "HPA detected",
+                "memory": null
+            }
+        },
+        "severity": "OK"
+    }
+]
+37
+[
+    "cpu",
+    "memory"
+]
+"[b]Simple Strategy[/b]\n\nCPU request: 95.0% percentile, limit: unset\nMemory request: max + 15.0%, limit: max + 15.0%\nHistory: 336.0 hours\nStep: 1.25 minutes\n\nAll parameters can be customized. For example: `krr simple --cpu_percentile=90 --memory_buffer_percentage=15 --history_duration=24 --timeframe_duration=0.5`\n\nThis strategy does not work with objects with HPA defined (Horizontal Pod Autoscaler).\nIf HPA is defined for CPU or Memory, the strategy will return \"?\" for that resource.\nYou can override this behaviour by passing the --allow-hpa flag\n\nLearn more: [underline]https://github.com/robusta-dev/krr#algorithm[/underline]"{
+    "name": "simple",
+    "settings": {
+        "history_duration": 336.0,
+        "timeframe_duration": 1.25,
+        "cpu_percentile": 95.0,
+        "memory_buffer_percentage": 15.0,
+        "points_required": 50,
+        "allow_hpa": false,
+        "use_oomkill_data": false,
+        "oom_memory_buffer_percentage": 25.0
+    }
+}
+[]
+{
+    "cluster_memory": 183682568192.0,
+    "cluster_cpu": 52.0,
+    "kube_system_mem_req": 461373440.0,
+    "kube_system_cpu_req": 2.15
+}
+{
+    "quiet": false,
+    "verbose": false,
+    "clusters": [],
+    "kubeconfig": null,
+    "impersonate_user": null,
+    "impersonate_group": null,
+    "namespaces": "*",
+    "resources": "*",
+    "selector": null,
+    "cpu_min_value": 10,
+    "memory_min_value": 100,
+    "prometheus_url": "http://host.docker.internal:9090",
+    "prometheus_auth_header": null,
+    "prometheus_other_headers": {},
+    "prometheus_ssl_enabled": false,
+    "prometheus_cluster_label": null,
+    "prometheus_label": null,
+    "eks_managed_prom": false,
+    "eks_managed_prom_profile_name": null,
+    "eks_access_key": null,
+    "eks_secret_key": null,
+    "eks_service_name": "aps",
+    "eks_managed_prom_region": null,
+    "coralogix_token": null,
+    "openshift": false,
+    "max_workers": 10,
+    "format": "json",
+    "show_cluster_name": false,
+    "strategy": "simple",
+    "log_to_stderr": false,
+    "width": null,
+    "show_severity": true,
+    "publish_scan_url": null,
+    "start_time": null,
+    "scan_id": null,
+    "named_sinks": [],
+    "file_output": null,
+    "file_output_dynamic": false,
+    "slack_output": null,
+    "azureblob_output": null,
+    "teams_webhook": null,
+    "azure_subscription_id": null,
+    "azure_resource_group": null,
+    "other_args": {
+        "history_duration": "336",
+        "timeframe_duration": "1.25",
+        "cpu_percentile": "95",
+        "memory_buffer_percentage": "15",
+        "points_required": "50",
+        "allow_hpa": false,
+        "use_oomkill_data": false,
+        "oom_memory_buffer_percentage": "25"
+    },
+    "inside_cluster": false
+}

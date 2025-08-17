@@ -1,0 +1,8 @@
+# kubernetes/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+    app.kubernetes.io/version: "1.0.0"

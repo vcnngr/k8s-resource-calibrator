@@ -1,0 +1,123 @@
+# kubernetes/postgres.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres-secret
+  namespace: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+    app.kubernetes.io/component: database
+type: Opaque
+data:
+  # Base64 encoded values
+  # echo -n 'krr_user' | base64
+  POSTGRES_USER: a3JyX3VzZXI=
+  # echo -n 'secure_password_change_me' | base64
+  POSTGRES_PASSWORD: c2VjdXJlX3Bhc3N3b3JkX2NoYW5nZV9tZQ==
+  # echo -n 'krr_management' | base64
+  POSTGRES_DB: a3JyX21hbmFnZW1lbnQ=
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+    app.kubernetes.io/component: database
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+  storageClassName: fast-ssd  # Adjust based on your cluster
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+    app.kubernetes.io/component: database
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate  # Important for databases
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: krr-management
+      app.kubernetes.io/component: database
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: krr-management
+        app.kubernetes.io/component: database
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:15-alpine
+        ports:
+        - containerPort: 5432
+        envFrom:
+        - secretRef:
+            name: postgres-secret
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data
+        - name: init-sql
+          mountPath: /docker-entrypoint-initdb.d
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          exec:
+            command:
+            - pg_isready
+            - -U
+            - krr_user
+            - -d
+            - krr_management
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          exec:
+            command:
+            - pg_isready
+            - -U
+            - krr_user
+            - -d
+            - krr_management
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: postgres-storage
+        persistentVolumeClaim:
+          claimName: postgres-pvc
+      - name: init-sql
+        configMap:
+          name: postgres-init-sql
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+    app.kubernetes.io/component: database
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app.kubernetes.io/name: krr-management
+    app.kubernetes.io/component: database

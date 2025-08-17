@@ -1,0 +1,36 @@
+# kubernetes/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: krr-management-ingress
+  namespace: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Adjust based on your cert-manager setup
+spec:
+  tls:
+  - hosts:
+    - krr-management.your-domain.com
+    secretName: krr-management-tls
+  rules:
+  - host: krr-management.your-domain.com
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: krr-management-backend
+            port:
+              number: 3001
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: krr-management-frontend
+            port:
+              number: 80

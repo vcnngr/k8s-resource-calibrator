@@ -1,0 +1,14 @@
+# kubernetes/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: krr-management-config
+  namespace: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+data:
+  NODE_ENV: "production"
+  LOG_LEVEL: "info"
+  CLUSTER_ID: "production-cluster"
+  CORS_ORIGIN: "https://krr-management.your-domain.com"
+  # Add more configuration as needed

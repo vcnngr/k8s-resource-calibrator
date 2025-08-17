@@ -1,0 +1,56 @@
+# kubernetes/rbac.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: krr-management-backend
+  namespace: krr-management
+  labels:
+    app.kubernetes.io/name: krr-management
+    app.kubernetes.io/component: backend
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: krr-management-cluster-role
+  labels:
+    app.kubernetes.io/name: krr-management
+rules:
+# Lettura risorse per backup
+- apiGroups: ["apps"]
+  resources: ["deployments", "statefulsets", "daemonsets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+# Patch risorse per applicazione
+- apiGroups: ["apps"]
+  resources: ["deployments", "statefulsets", "daemonsets"]
+  verbs: ["patch", "update"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["patch", "update"]
+# Lettura namespace
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["get", "list"]
+# Lettura pod per monitoring
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: krr-management-cluster-binding
+  labels:
+    app.kubernetes.io/name: krr-management
+subjects:
+- kind: ServiceAccount
+  name: krr-management-backend
+  namespace: krr-management
+roleRef:
+  kind: ClusterRole
+  name: krr-management-cluster-role
+  apiGroup: rbac.authorization.k8s.io
